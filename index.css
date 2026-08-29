@@ -120,6 +120,11 @@ body {
     font-weight: normal;
     margin-bottom: 10px;
 }
+.content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 
 .content p {
     font-size: 14px;
