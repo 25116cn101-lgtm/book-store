@@ -14,7 +14,7 @@ body {
 ========================= */
 
 .header {
-    background-size: cover;
+    height: 100px;
     display: flex;
     border: 1px solid black;
     background-color: #da9041;
@@ -33,7 +33,6 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    overflow: hidden;
 }
 
 .website-name {
@@ -65,15 +64,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color:blue;
+
+    color: blue;
     text-decoration: none;
-    
 
     border-right: 1px solid black;
 }
 
 .nav a:last-child {
     border-right: none;
+}
+
+.nav a:hover {
+    background-color: #f2f2f2;
 }
 
 
@@ -83,7 +86,7 @@ body {
 
 .main-content {
     display: flex;
-    min-height: 1000px;
+    height: calc(100vh - 140px);
 
     border-left: 1px solid black;
     border-right: 1px solid black;
@@ -91,7 +94,9 @@ body {
 }
 
 
-/* LEFT SIDEBAR */
+/* =========================
+   LEFT SIDEBAR
+========================= */
 
 .sidebar {
     width: 20%;
@@ -104,28 +109,23 @@ body {
 }
 
 
-/* RIGHT CONTENT */
+/* =========================
+   RIGHT CONTENT
+========================= */
 
 .content {
     width: 80%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
 }
 
-.content h2 {
-    font-size: 18px;
-    font-weight: normal;
-    margin-bottom: 10px;
-}
+
+/* =========================
+   IFRAME
+========================= */
+
 .content iframe {
     width: 100%;
     height: 100%;
     border: none;
-}
-
-.content p {
-    font-size: 14px;
+    display: block;
 }
