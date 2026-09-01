@@ -22,13 +22,18 @@ body {
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    
 }
 
 .logo img {
-    width: 65px;
-    height: 65px;
+    display: flex;
+    justify-content: right;
+    width: 105px;
+    height: 85.1px;
     object-fit: contain;
+    padding-left: 0px;
+
 }
 
 .site {
