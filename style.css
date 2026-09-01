@@ -196,3 +196,12 @@ button {
     font-weight: bold;
     margin-top: 20px;
 }
+footer {
+    font-size: 10px;
+    text-decoration: none;
+    background: #ece7e1;
+    color: #010101;
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #aaa;
+}
