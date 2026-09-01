@@ -1,166 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h2>Registration Form</h2>
+<div class="header">
+    <div class="logo">LOGO</div>
+    <div class="site">Online Book Store</div>
+</div>
 
-    <form>
+<div class="nav">
+    <a href="home.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="registration.html">Registration</a>
+    <a href="catalogue.html">Catalogue</a>
+    <a href="cart.html">Cart</a>
+</div>
 
-        <!-- Name -->
-        <label>Name:</label>
-        <input type="text" name="name">
+<div class="layout">
 
-        <br><br>
+    <div class="sidebar">
+        <a href="catalogue.html">CSE</a>
+        <a href="catalogue.html">ECE</a>
+        <a href="catalogue.html">EEE</a>
+        <a href="catalogue.html">CIVIL</a>
+    </div>
 
+    <div class="content">
+        <div class="box registration">
 
-        <!-- Password -->
-        <label>Password:</label>
-        <input type="password" name="password">
+            <h2>Registration Page</h2>
 
-        <br><br>
+            <label>Name</label>
+            <input type="text">
 
+            <label>Password</label>
+            <input type="password">
 
-        <!-- Email -->
-        <label>E-mail:</label>
-        <input type="email" name="email">
+            <label>E-mail</label>
+            <input type="email">
 
-        <br><br>
+            <label>Phone Number</label>
+            <input type="text">
 
+            <label>Sex</label>
+            <div class="options">
+                <input type="radio" name="sex"> Male
+                <input type="radio" name="sex"> Female
+            </div>
 
-        <!-- Phone -->
-        <label>Phone Number:</label>
-        <input type="text" name="phone">
+            <label>Date of Birth</label>
+            <div class="dob">
+                <select>
+                    <option>Day</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
 
-        <br><br>
+                <select>
+                    <option>Month</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                </select>
 
-
-        <!-- Sex -->
-        <label>Sex:</label>
-
-        <input type="radio" name="sex" value="Male">
-        Male
-
-        <input type="radio" name="sex" value="Female">
-        Female
-
-        <br><br>
-
-
-        <!-- Date of Birth -->
-        <label>Date of Birth:</label>
-
-        <select name="day">
-            <option>Day</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-            <option>13</option>
-            <option>14</option>
-            <option>15</option>
-            <option>16</option>
-            <option>17</option>
-            <option>18</option>
-            <option>19</option>
-            <option>20</option>
-            <option>21</option>
-            <option>22</option>
-            <option>23</option>
-            <option>24</option>
-            <option>25</option>
-            <option>26</option>
-            <option>27</option>
-            <option>28</option>
-            <option>29</option>
-            <option>30</option>
-            <option>31</option>
-        </select>
+                <select>
+                    <option>Year</option>
+                    <option>2000</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                </select>
+            </div>
 
 
-        <select name="month">
-            <option>Month</option>
-            <option>January</option>
-            <option>February</option>
-            <option>March</option>
-            <option>April</option>
-            <option>May</option>
-            <option>June</option>
-            <option>July</option>
-            <option>August</option>
-            <option>September</option>
-            <option>October</option>
-            <option>November</option>
-            <option>December</option>
-        </select>
+            <div class="buttons">
+                <button>Register</button>
+                <button type="reset">Reset</button>
+            </div>
 
+        </div>
+    </div>
 
-        <select name="year">
-            <option>Year</option>
-            <option>2000</option>
-            <option>2001</option>
-            <option>2002</option>
-            <option>2003</option>
-            <option>2004</option>
-            <option>2005</option>
-            <option>2006</option>
-            <option>2007</option>
-            <option>2008</option>
-            <option>2009</option>
-            <option>2010</option>
-        </select>
-
-        <br><br>
-
-
-        <!-- Languages -->
-        <label>Languages Known:</label>
-
-        <input type="checkbox" name="language" value="English">
-        English
-
-        <input type="checkbox" name="language" value="Hindi">
-        Hindi
-
-        <input type="checkbox" name="language" value="Telugu">
-        Telugu
-
-        <input type="checkbox" name="language" value="Tamil">
-        Tamil
-
-        <br><br>
-
-
-        <!-- Address -->
-        <label>Address:</label>
-
-        <br>
-
-        <textarea name="address" rows="5" cols="40"></textarea>
-
-        <br><br>
-
-
-        <input type="submit" value="Register">
-
-        <input type="reset" value="Reset">
-
-    </form>
+</div>
 
 </body>
-
 </html>
