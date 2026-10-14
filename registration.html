@@ -1,41 +1,18 @@
+
 <link rel="stylesheet" href="style.css">
-
 <div class="content">
-
-    <div class="box">
-
-        <h2>Registration</h2>
-
-        <label>Name</label>
-        <input type="text" placeholder="Enter name">
-
-        <label>Email</label>
-        <input type="email" placeholder="Enter email">
-
-        <label>Password</label>
-        <input type="password" placeholder="Enter password">
-
-        <label>Date of Birth</label>
-
-        <div class="dob">
-            <select>
-                <option>Day</option>
-            </select>
-
-            <select>
-                <option>Month</option>
-            </select>
-
-            <select>
-                <option>Year</option>
-            </select>
-        </div>
-
-        <div class="buttons">
-            <button>Register</button>
-            <button>Reset</button>
-        </div>
-
-    </div>
-
+<form class="box" onsubmit="event.preventDefault();alert('Demo registration only')">
+<h2>Registration</h2>
+<label>Name</label>
+<input type="text" required placeholder="Enter name">
+<label>Email</label>
+<input type="email" required placeholder="Enter email">
+<label>Password</label>
+<input type="password" minlength="8" required placeholder="Enter password">
+<label>Date of Birth</label>
+<input type="date" required>
+<button>Register</button>
+<button type="reset">Reset</button>
+</form>
 </div>
+
