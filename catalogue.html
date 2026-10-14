@@ -1,23 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue | BookHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<link rel="stylesheet" href="style.css">
-<div class="content">
-<h2>Our Book Catalogue</h2>
-<div id="books" class="books"></div>
-<script>
-let data=[
-["Atomic Habits","James Clear",499,"1544947950-fa07a98d237f"],
-["Rich Dad Poor Dad","Robert Kiyosaki",399,"1512820790803-83ca734da794"],
-["The Psychology of Money","Morgan Housel",299,"1543002588-bfa74002ed7e"]
-];
-data.forEach(b=>books.innerHTML+=`<div class="book">
-<img src="https://images.unsplash.com/photo-${b[3]}?w=200" alt="Book cover">
-<div><h3>${b[0]}</h3><p>${b[1]}</p><p>₹${b[2]}</p>
-<button onclick='add(${JSON.stringify(b)})'>Add to Cart</button></div>
-</div>`);
-function add(b){
-let c=JSON.parse(localStorage.cart||"[]");
-c.push(b);localStorage.cart=JSON.stringify(c);
-alert("Added to cart!");
-}
-</script>
-</div>
+<body class="content-page">
+
+    <main class="catalogue-main">
+
+        <div class="section-heading">
+            <p class="eyebrow">DISCOVER YOUR NEXT READ</p>
+            <h1>Our Book Catalogue</h1>
+            <p>Hand-picked books for curious minds and future engineers.</p>
+        </div>
+
+        <section class="book-grid">
+
+            <article class="book-card" id="cse">
+                <img
+                    src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=500&q=80"
+                    alt="Book cover representing Atomic Habits"
+                >
+                <div class="book-details">
+                    <span class="book-category">CSE · Personal Development</span>
+                    <h2>Atomic Habits</h2>
+                    <p>James Clear</p>
+                    <strong class="book-price">₹499</strong>
+                    <button class="primary-button add-cart"
+                        data-id="atomic-habits"
+                        data-title="Atomic Habits"
+                        data-author="James Clear"
+                        data-price="499">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <img
+                    src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=500&q=80"
+                    alt="Stack of books representing Rich Dad Poor Dad"
+                >
+                <div class="book-details">
+                    <span class="book-category">CSE · Finance</span>
+                    <h2>Rich Dad Poor Dad</h2>
+                    <p>Robert Kiyosaki</p>
+                    <strong class="book-price">₹399</strong>
+                    <button class="primary-button add-cart"
+                        data-id="rich-dad-poor-dad"
+                        data-title="Rich Dad Poor Dad"
+                        data-author="Robert Kiyosaki"
+                        data-price="399">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <img
+                    src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=500&q=80"
+                    alt="Open book representing The Psychology of Money"
+                >
+                <div class="book-details">
+                    <span class="book-category">CSE · Finance</span>
+                    <h2>The Psychology of Money</h2>
+                    <p>Morgan Housel</p>
+                    <strong class="book-price">₹299</strong>
+                    <button class="primary-button add-cart"
+                        data-id="psychology-of-money"
+                        data-title="The Psychology of Money"
+                        data-author="Morgan Housel"
+                        data-price="299">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <article class="book-card" id="ece">
+                <img
+                    src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=500&q=80"
+                    alt="Technical books for electronics students"
+                >
+                <div class="book-details">
+                    <span class="book-category">ECE · Electronics</span>
+                    <h2>Electronic Devices</h2>
+                    <p>Engineering Reference</p>
+                    <strong class="book-price">₹450</strong>
+                    <button class="primary-button add-cart"
+                        data-id="electronic-devices"
+                        data-title="Electronic Devices"
+                        data-author="Engineering Reference"
+                        data-price="450">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <article class="book-card" id="eee">
+                <img
+                    src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=500&q=80"
+                    alt="Books for electrical engineering"
+                >
+                <div class="book-details">
+                    <span class="book-category">EEE · Electrical</span>
+                    <h2>Electrical Engineering</h2>
+                    <p>Engineering Reference</p>
+                    <strong class="book-price">₹549</strong>
+                    <button class="primary-button add-cart"
+                        data-id="electrical-engineering"
+                        data-title="Electrical Engineering"
+                        data-author="Engineering Reference"
+                        data-price="549">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <article class="book-card" id="civil">
+                <img
+                    src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=500&q=80"
+                    alt="Books for civil engineering students"
+                >
+                <div class="book-details">
+                    <span class="book-category">CIVIL · Construction</span>
+                    <h2>Building Construction</h2>
+                    <p>Engineering Reference</p>
+                    <strong class="book-price">₹599</strong>
+                    <button class="primary-button add-cart"
+                        data-id="building-construction"
+                        data-title="Building Construction"
+                        data-author="Engineering Reference"
+                        data-price="599">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+        </section>
+
+        <p class="cart-message" id="cart-message" aria-live="polite"></p>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 <strong>Raman Kashyap</strong> | Roll No. 2501920110296</p>
+        <p>
+            GitHub:
+            <a href="https://github.com/25116cn101-lgtm/book-store"
+               target="_blank" rel="noopener noreferrer">https://github.com/25116cn101-lgtm/book-store</a>
+        </p>
+        <p>
+            Live Website:
+            <a href="https://book-store-roman16.vercel.app"
+               target="_blank" rel="noopener noreferrer">https://book-store-roman16.vercel.app</a>
+        </p>
+    </footer>
+
+    <script>
+        const cartKey = "bookhub-cart";
+
+        document.querySelectorAll(".add-cart").forEach(function (button) {
+            button.addEventListener("click", function () {
+                let cart = JSON.parse(localStorage.getItem(cartKey) || "[]");
+
+                const id = button.dataset.id;
+                const existingBook = cart.find(function (book) {
+                    return book.id === id;
+                });
+
+                if (existingBook) {
+                    existingBook.quantity += 1;
+                } else {
+                    cart.push({
+                        id: id,
+                        title: button.dataset.title,
+                        author: button.dataset.author,
+                        price: Number(button.dataset.price),
+                        quantity: 1
+                    });
+                }
+
+                localStorage.setItem(cartKey, JSON.stringify(cart));
+
+                document.getElementById("cart-message").textContent =
+                    button.dataset.title + " added to your cart.";
+
+                button.textContent = "Added ✓";
+
+                setTimeout(function () {
+                    button.textContent = "Add to Cart";
+                }, 1000);
+            });
+        });
+    </script>
+
+</body>
+</html>
