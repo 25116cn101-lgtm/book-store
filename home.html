@@ -1,32 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | BookHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<link rel="stylesheet" href="style.css">
-<div class="content">
-<h1>Discover a World of Books</h1>
-<p>Your next favourite book is just a click away!</p>
-<h2>Featured Books</h2>
-<div class="books">
-<script>
-let books = [
- ["Atomic Habits","James Clear",499,
- "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=200"],
- ["Rich Dad Poor Dad","Robert Kiyosaki",399,
- "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=200"],
- ["The Psychology of Money","Morgan Housel",299,
- "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=200"]
-];
-books.forEach((b,i)=>{
- document.write(`<div class="book">
- <img src="${b[3]}" alt="${b[0]} book cover">
- <div><h3>${b[0]}</h3><p>Author: ${b[1]}</p>
- <p>Price: ₹${b[2]}</p>
- <button onclick="add(${i})">Add to Cart</button></div></div>`);
-});
-function add(i){
- let cart=JSON.parse(localStorage.cart||"[]");
- cart.push(books[i]); localStorage.cart=JSON.stringify(cart);
- alert("Book added to cart!");
-}
-</script>
-</div>
-</div>
+<body class="content-page">
 
+    <main class="home-main">
+
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">WELCOME TO BOOKHUB</p>
+
+                <h1>
+                    Your Knowledge.<br>
+                    <span>Your Future.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover engineering books, explore new ideas
+                    and build your technical library with BookHub.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="catalogue.html" class="primary-button">
+                        Explore Books →
+                    </a>
+
+                    <a href="registration.html" class="secondary-button">
+                        Create Account
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <img
+                    src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=85"
+                    alt="Bookshelves in a library"
+                >
+                <div class="visual-caption">
+                    <span>READ</span>
+                    <span>LEARN</span>
+                    <span>GROW</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="branch-section">
+            <p class="eyebrow">FIND YOUR NEXT BOOK</p>
+            <h2>Choose Your Branch</h2>
+
+            <div class="branch-grid">
+
+                <a href="catalogue.html#cse" class="branch-card">
+                    <span class="branch-icon">💻</span>
+                    <h3>CSE</h3>
+                    <p>Programming &amp; DSA</p>
+                </a>
+
+                <a href="catalogue.html#ece" class="branch-card">
+                    <span class="branch-icon">📡</span>
+                    <h3>ECE</h3>
+                    <p>Electronics</p>
+                </a>
+
+                <a href="catalogue.html#eee" class="branch-card">
+                    <span class="branch-icon">⚡</span>
+                    <h3>EEE</h3>
+                    <p>Electrical Engineering</p>
+                </a>
+
+                <a href="catalogue.html#civil" class="branch-card">
+                    <span class="branch-icon">🏗️</span>
+                    <h3>CIVIL</h3>
+                    <p>Construction</p>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 <strong>Raman Kashyap</strong> | Roll No. 2501920110296</p>
+
+        <p>
+            GitHub:
+            <a href="https://github.com/25116cn101-lgtm/book-store"
+               target="_blank" rel="noopener noreferrer">https://github.com/25116cn101-lgtm/book-store</a>
+        </p>
+
+        <p>
+            Live Website:
+            <a href="https://book-store-roman16.vercel.app"
+               target="_blank" rel="noopener noreferrer">https://book-store-roman16.vercel.app</a>
+        </p>
+    </footer>
+
+</body>
+</html>
