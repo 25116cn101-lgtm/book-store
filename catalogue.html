@@ -1,39 +1,23 @@
+
 <link rel="stylesheet" href="style.css">
-
 <div class="content">
-
-    <h2>Book Catalogue</h2>
-
-    <div class="book">
-        <img src="image copy.png">
-        <div class="book-info">
-            <h3>Atomic Habits</h3>
-            <p>James Clear</p>
-            <p>₹499</p>
-            <button>Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="book">
-        <img src="image copy.png">
-        <div class="book-info">
-            <h3>Rich Dad Poor Dad</h3>
-            <p>Robert Kiyosaki</p>
-            <p>₹399</p>
-            <button>Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="book">
-        <img src="image copy.png">
-        <div class="book-info">
-            <h3>The Psychology of Money</h3>
-            <p>Morgan Housel</p>
-            <p>₹429</p>
-            <button>Add to Cart</button>
-        </div>
-    </div>
-
+<h2>Our Book Catalogue</h2>
+<div id="books" class="books"></div>
+<script>
+let data=[
+["Atomic Habits","James Clear",499,"1544947950-fa07a98d237f"],
+["Rich Dad Poor Dad","Robert Kiyosaki",399,"1512820790803-83ca734da794"],
+["The Psychology of Money","Morgan Housel",299,"1543002588-bfa74002ed7e"]
+];
+data.forEach(b=>books.innerHTML+=`<div class="book">
+<img src="https://images.unsplash.com/photo-${b[3]}?w=200" alt="Book cover">
+<div><h3>${b[0]}</h3><p>${b[1]}</p><p>₹${b[2]}</p>
+<button onclick='add(${JSON.stringify(b)})'>Add to Cart</button></div>
+</div>`);
+function add(b){
+let c=JSON.parse(localStorage.cart||"[]");
+c.push(b);localStorage.cart=JSON.stringify(c);
+alert("Added to cart!");
+}
+</script>
 </div>
-
-<footer>© 2026 Online Book Store</footer>
