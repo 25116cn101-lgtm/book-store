@@ -1,43 +1,32 @@
+
 <link rel="stylesheet" href="style.css">
-
 <div class="content">
-
-    <div class="hero">
-        <span class="tag">WELCOME TO BOOKSTORE</span>
-        <h1>Discover a World of Books</h1>
-        <p>Your next favourite book is just a click away.</p>
-        <a class="hero-btn" href="catalogue.html">Shop Now →</a>
-    </div>
-
-    <h2>Featured Books</h2>
-
-    <div class="book">
-
-        <img src="image copy.png">
-
-        <div class="book-info">
-            <h3>Atomic Habits</h3>
-            <p>Author: James Clear</p>
-            <p>Price: ₹499</p>
-            <button>Add to Cart</button>
-        </div>
-
-    </div>
-
-    <div class="book">
-
-        <img src="image copy.png">
-
-        <div class="book-info">
-            <h3>Rich Dad Poor Dad</h3>
-            <p>Author: Robert Kiyosaki</p>
-            <p>Price: ₹399</p>
-            <button>Add to Cart</button>
-        </div>
-
-    </div>
-
+<h1>Discover a World of Books</h1>
+<p>Your next favourite book is just a click away!</p>
+<h2>Featured Books</h2>
+<div class="books">
+<script>
+let books = [
+ ["Atomic Habits","James Clear",499,
+ "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=200"],
+ ["Rich Dad Poor Dad","Robert Kiyosaki",399,
+ "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=200"],
+ ["The Psychology of Money","Morgan Housel",299,
+ "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=200"]
+];
+books.forEach((b,i)=>{
+ document.write(`<div class="book">
+ <img src="${b[3]}" alt="${b[0]} book cover">
+ <div><h3>${b[0]}</h3><p>Author: ${b[1]}</p>
+ <p>Price: ₹${b[2]}</p>
+ <button onclick="add(${i})">Add to Cart</button></div></div>`);
+});
+function add(i){
+ let cart=JSON.parse(localStorage.cart||"[]");
+ cart.push(books[i]); localStorage.cart=JSON.stringify(cart);
+ alert("Book added to cart!");
+}
+</script>
 </div>
-
-<footer>© 2026 Online Book Store</footer>
+</div>
 
