@@ -1,18 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | BookHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<link rel="stylesheet" href="style.css">
-<div class="content">
-<form class="box" onsubmit="event.preventDefault();alert('Demo registration only')">
-<h2>Registration</h2>
-<label>Name</label>
-<input type="text" required placeholder="Enter name">
-<label>Email</label>
-<input type="email" required placeholder="Enter email">
-<label>Password</label>
-<input type="password" minlength="8" required placeholder="Enter password">
-<label>Date of Birth</label>
-<input type="date" required>
-<button>Register</button>
-<button type="reset">Reset</button>
-</form>
-</div>
+<body class="content-page">
 
+    <main class="page-main login-main">
+
+        <section class="form-card login-card">
+            <p class="eyebrow">WELCOME BACK</p>
+            <h1>Login to BookHub</h1>
+
+            <p class="form-intro">
+                Sign in to continue exploring your favourite books.
+            </p>
+
+            <form onsubmit="return demoLogin()">
+
+                <div class="field">
+                    <label for="username">User Name or Email</label>
+                    <input
+                        id="username"
+                        name="username"
+                        type="text"
+                        placeholder="Enter username or email"
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="login-password">Password</label>
+                    <input
+                        id="login-password"
+                        name="password"
+                        type="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <div class="form-actions">
+                    <button class="primary-button" type="submit">Login</button>
+                    <button class="secondary-button" type="reset">Reset</button>
+                </div>
+
+            </form>
+
+            <p class="form-bottom">
+                New to BookHub?
+                <a href="registration.html">Create an account</a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 <strong>Raman Kashyap</strong> | Roll No. 2501920110296</p>
+        <p>
+            GitHub:
+            <a href="https://github.com/25116cn101-lgtm/book-store"
+               target="_blank" rel="noopener noreferrer">https://github.com/25116cn101-lgtm/book-store</a>
+        </p>
+        <p>
+            Live Website:
+            <a href="https://book-store-roman16.vercel.app"
+               target="_blank" rel="noopener noreferrer">https://book-store-roman16.vercel.app</a>
+        </p>
+    </footer>
+
+    <script>
+        function demoLogin() {
+            alert(
+                "This is a demo login page. " +
+                "Real authentication is not connected."
+            );
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>
