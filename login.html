@@ -1,21 +1,13 @@
+
 <link rel="stylesheet" href="style.css">
-
 <div class="content">
-
-    <div class="box">
-
-        <h2>Login</h2>
-
-        <label>Email</label>
-        <input type="email" placeholder="Enter email">
-
-        <label>Password</label>
-        <input type="password" placeholder="Enter password">
-
-        <div class="buttons">
-            <button>Login</button>
-        </div>
-
-    </div>
-
+<form class="box" onsubmit="event.preventDefault();alert('Demo login only')">
+<h2>Login</h2>
+<label>Email</label>
+<input type="email" required placeholder="Enter email">
+<label>Password</label>
+<input type="password" required placeholder="Enter password">
+<button>Login</button>
+<button type="reset">Reset</button>
+</form>
 </div>
