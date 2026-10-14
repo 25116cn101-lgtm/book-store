@@ -1,12 +1,31 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Online Book Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookHub | Online Book Store</title>
 </head>
-<frameset rows="125,*">
-  <frame src="top.html">
-  <frameset cols="160,*">
-    <frame src="left.html">
-    <frame src="home.html" name="mainFrame">
-  </frame
+
+<frameset rows="92,*" frameborder="0" border="0">
+    <frame
+        src="top.html"
+        name="topFrame"
+        scrolling="no"
+        title="Website Header"
+    >
+
+    <frameset cols="244,*" frameborder="0" border="0">
+        <frame
+            src="left.html"
+            name="leftFrame"
+            title="Book Categories"
+        >
+
+        <frame
+            src="home.html"
+            name="mainFrame"
+            title="Main Content"
+        >
+    </frameset>
+</frameset>
+</html>
