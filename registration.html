@@ -3,57 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | BookHub</title>
+    <title>Registration | BookHub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="content-page">
 
-    <main class="page-main login-main">
+    <main class="page-main registration-main">
 
-        <section class="form-card login-card">
-            <p class="eyebrow">WELCOME BACK</p>
-            <h1>Login to BookHub</h1>
+        <section class="form-card">
+            <p class="eyebrow">JOIN OUR COMMUNITY</p>
+            <h1>Registration Page</h1>
 
             <p class="form-intro">
-                Sign in to continue exploring your favourite books.
+                Create your BookHub account and discover your next great read.
             </p>
 
-            <form onsubmit="return demoLogin()">
+            <form class="registration-form" onsubmit="return validateRegistration()">
 
                 <div class="field">
-                    <label for="username">User Name or Email</label>
+                    <label for="name">Full Name</label>
                     <input
-                        id="username"
-                        name="username"
+                        id="name"
+                        name="name"
                         type="text"
-                        placeholder="Enter username or email"
+                        placeholder="Enter your full name"
+                        minlength="3"
                         required
                     >
                 </div>
 
                 <div class="field">
-                    <label for="login-password">Password</label>
+                    <label for="password">Password</label>
                     <input
-                        id="login-password"
+                        id="password"
                         name="password"
                         type="password"
-                        placeholder="Enter your password"
+                        placeholder="At least 6 characters"
+                        minlength="6"
                         required
                     >
+                </div>
+
+                <div class="field">
+                    <label for="email">E-mail</label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        inputmode="numeric"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        placeholder="10-digit mobile number"
+                        required
+                    >
+                </div>
+
+                <fieldset class="field choice-field">
+                    <legend>Sex</legend>
+
+                    <label class="inline-choice">
+                        <input type="radio" name="sex" value="Male" required>
+                        Male
+                    </label>
+
+                    <label class="inline-choice">
+                        <input type="radio" name="sex" value="Female">
+                        Female
+                    </label>
+
+                    <label class="inline-choice">
+                        <input type="radio" name="sex" value="Prefer not to say">
+                        Prefer not to say
+                    </label>
+                </fieldset>
+
+                <div class="field">
+                    <label>Date of Birth</label>
+
+                    <div class="date-row">
+                        <select id="day" name="day" required>
+                            <option value="">Day</option>
+                        </select>
+
+                        <select id="month" name="month" required>
+                            <option value="">Month</option>
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+
+                        <select id="year" name="year" required>
+                            <option value="">Year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <fieldset class="field choice-field">
+                    <legend>Languages Known</legend>
+
+                    <div class="language-options">
+                        <label class="inline-choice">
+                            <input type="checkbox" name="languages" value="English">
+                            English
+                        </label>
+
+                        <label class="inline-choice">
+                            <input type="checkbox" name="languages" value="Hindi">
+                            Hindi
+                        </label>
+
+                        <label class="inline-choice">
+                            <input type="checkbox" name="languages" value="Telugu">
+                            Telugu
+                        </label>
+
+                        <label class="inline-choice">
+                            <input type="checkbox" name="languages" value="Tamil">
+                            Tamil
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="field">
+                    <label for="address">Address</label>
+                    <textarea
+                        id="address"
+                        name="address"
+                        rows="3"
+                        placeholder="Enter your address"
+                        required
+                    ></textarea>
                 </div>
 
                 <div class="form-actions">
-                    <button class="primary-button" type="submit">Login</button>
+                    <button class="primary-button" type="submit">Register</button>
                     <button class="secondary-button" type="reset">Reset</button>
                 </div>
 
             </form>
-
-            <p class="form-bottom">
-                New to BookHub?
-                <a href="registration.html">Create an account</a>
-            </p>
         </section>
 
     </main>
@@ -73,10 +181,68 @@
     </footer>
 
     <script>
-        function demoLogin() {
+        const daySelect = document.getElementById("day");
+        const yearSelect = document.getElementById("year");
+
+        for (let day = 1; day <= 31; day++) {
+            const option = document.createElement("option");
+            option.value = day;
+            option.textContent = day;
+            daySelect.appendChild(option);
+        }
+
+        const currentYear = new Date().getFullYear();
+
+        for (let year = currentYear; year >= 1950; year--) {
+            const option = document.createElement("option");
+            option.value = year;
+            option.textContent = year;
+            yearSelect.appendChild(option);
+        }
+
+        function validateRegistration() {
+            const name = document.getElementById("name").value.trim();
+            const password = document.getElementById("password").value;
+            const phone = document.getElementById("phone").value.trim();
+            const languages = document.querySelectorAll(
+                'input[name="languages"]:checked'
+            );
+
+            if (name.length < 3) {
+                alert("Name must contain at least 3 characters.");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must contain at least 6 characters.");
+                return false;
+            }
+
+            if (!/^[0-9]{10}$/.test(phone)) {
+                alert("Enter a valid 10-digit phone number.");
+                return false;
+            }
+
+            if (languages.length === 0) {
+                alert("Please select at least one language.");
+                return false;
+            }
+
+            const monthSelect = document.getElementById("month");
+            const monthNumber = monthSelect.selectedIndex;
+            const day = Number(daySelect.value);
+            const year = Number(yearSelect.value);
+
+            const monthDays = new Date(year, monthNumber, 0).getDate();
+
+            if (day > monthDays) {
+                alert("Please select a valid date of birth.");
+                return false;
+            }
+
             alert(
-                "This is a demo login page. " +
-                "Real authentication is not connected."
+                "Registration successful! This is a demo form. " +
+                "No account details have been saved."
             );
 
             return false;
